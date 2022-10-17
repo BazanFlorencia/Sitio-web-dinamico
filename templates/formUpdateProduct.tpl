@@ -11,13 +11,10 @@
         <input type="text" name="precio" value="{$product->precio}">
         </div>
         <div class="formulario1">
-        <select name="tipo_producto" class="selectUpdate" value ="{$product->categoria}"> 
-            <option value="4">Cereal</option>
-            <option value="2">Condimento</option>
-            <option value="1">Frutos secos</option>
-            <option value="3">Harina</option>
-            <option value="7">Semillas</option>
-            <option value="6">Legumbres</option>
+        <select name="tipo_producto" class="selectUpdate" value ="{$categories->id_categoria}"> 
+            {foreach from=$categories item=$category}
+                <option value="{$category->id_categoria}">{$category->tipo_producto}</option>
+            {/foreach}
         </select>
         </div>
         <div class="formulario1">

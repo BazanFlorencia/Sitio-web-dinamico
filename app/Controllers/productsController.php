@@ -50,8 +50,9 @@ require_once './app/helpers/auth.helper.php';
 
     public function formUpdate($id){
         $this->authHelper->checkloggedIn();
+        $categories = $this->modelCategory->getCategories();
         $product = $this->modelProduct->getProduct($id);
-        $this->viewProduct->showFormUpdate($product);
+        $this->viewProduct->showFormUpdate($product, $categories);
     }
     
     public function updateProduct($id){

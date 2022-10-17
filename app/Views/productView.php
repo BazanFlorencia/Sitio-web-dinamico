@@ -15,8 +15,9 @@ class productView{
       $this->smarty->display('templates/productsTable.tpl');
     }
 
-    public function showFormUpdate($product){
+    public function showFormUpdate($product, $categories){
       $this->smarty->assign('product', $product);
+      $this->smarty->assign('categories', $categories);
       $this->smarty->display('templates/formUpdateProduct.tpl');
     }
 

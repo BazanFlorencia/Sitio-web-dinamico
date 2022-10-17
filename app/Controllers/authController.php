@@ -24,40 +24,21 @@ class authController{
 
     public function validateUser() {
             if(!empty($_POST['email'])&&!empty($_POST['password'])){
-
-           
             $email = $_POST['email'];
             $password = $_POST['password'];
-            
             $user = $this->userModel->getUserByEmail($email);
-            
-            var_dump($user);
-            
-            
-            var_dump($user->name);
-            var_dump($user->password);
-           
             if ($user && password_verify($password, $user->password)) {
-
                 session_start();
                 $_SESSION['USER_ID'] = $user->id;
                 $_SESSION['USER_EMAIL'] = $user->email;
                 $_SESSION['IS_LOGGED'] = true;
-                
                 header("Location: ".BASE_URL. 'home');
-                
-                
-            
-        
             } else {
-    
-            $this->authView->showFormLogin("El usuario o la contraseña no existe.");
+                $this->authView->showFormLogin("El usuario o la contraseña no existe.");
             }
         }
-        }
-     
+    }
     
-
     public function logout() {
         session_start();
         session_destroy();
