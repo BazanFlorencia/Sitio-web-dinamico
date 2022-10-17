@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-10-2022 a las 15:07:01
+-- Tiempo de generación: 18-10-2022 a las 01:51:17
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -56,48 +56,47 @@ CREATE TABLE `lista_productos` (
   `id_producto` int(11) NOT NULL,
   `nombre_producto` varchar(200) NOT NULL,
   `precio` int(11) NOT NULL,
-  `id_categoria` int(100) NOT NULL
+  `id_categoria` int(100) NOT NULL,
+  `imagen` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `lista_productos`
 --
 
-INSERT INTO `lista_productos` (`id_producto`, `nombre_producto`, `precio`, `id_categoria`) VALUES
-(1, 'Adobo para pizza x 100 grs.', 71, 2),
-(2, 'Ajo en polvo x 100 grs.', 82, 2),
-(3, 'Condimento para arroz x 100 grs.', 75, 2),
-(4, 'Orégano x 100 grs.', 84, 2),
-(5, 'Pimentón x 100 grs.', 82, 2),
-(6, 'Provenzal x 100 grs.', 95, 2),
-(7, 'Chia x 100 grs.', 120, 7),
-(8, 'Girasol pelado entero x 100 grs.', 80, 7),
-(9, 'Lino x 100 grs.', 47, 7),
-(10, 'Almendras x 100 grs.', 180, 1),
-(11, 'Ciruela bombón x 100 grs.', 180, 1),
-(12, 'Granola clásica x 100 grs.', 60, 1),
-(13, 'Granola tropical x 100 grs.', 95, 1),
-(14, 'Nueces peladas mariposa', 256, 1),
-(15, 'Harina de Algarroba x 100 grs.', 53, 3),
-(16, 'Harina de Almendras x 100 grs.', 224, 3),
-(17, 'Harina de Arroz x 500 grs.', 183, 3),
-(18, 'Harina de Coco x 500 grs.', 580, 3),
-(19, 'Harina de soja x 500 grs.', 149, 3),
-(20, 'Bolitas de chocolate x 300 grs.', 220, 4),
-(21, 'Copos azucarados x 300 grs.', 210, 4),
-(22, 'Copos naturales x 300 grs.', 180, 4),
-(23, 'Aritos frutales x 300 grs.', 230, 4),
-(24, 'Azúcar impalpable x 500 grs.', 172, 5),
-(25, 'Azúcar negra x 500 grs.', 165, 5),
-(26, 'Coco rallado x 500 grs.', 871, 5),
-(27, 'Polvo para hornear x 100 grs.', 90, 5),
-(28, 'Arroz integral x 500 grs.', 90, 6),
-(29, 'Garbanzos x 500 grs.', 125, 6),
-(30, 'Porotos Alubia x 500 grs.', 110, 6),
-(31, 'Porotos Negros x 500 grs.', 175, 6),
-(45, 'Mix frutos secos x 100grs', 210, 4),
-(48, 'Pasas de uvas x 100 grs.', 54, 1),
-(53, 'Canela molida x 100 grs.', 240, 2);
+INSERT INTO `lista_productos` (`id_producto`, `nombre_producto`, `precio`, `id_categoria`, `imagen`) VALUES
+(7, 'Chia x 100 grs.', 120, 7, 'img/productos/634db370e301b.jpg'),
+(8, 'Girasol pelado entero x 100 grs.', 80, 7, 'img/productos/634db38654ad4.jpg'),
+(9, 'Lino x 100 grs.', 47, 7, 'img/productos/634db3cfd818d.jpg'),
+(20, 'Bolitas de chocolate x 300 grs.', 220, 4, 'img/productos/634dacd65383d.jpg'),
+(21, 'Copos azucarados x 300 grs.', 210, 4, 'img/productos/634dad28b6b97.jpg'),
+(22, 'Copos naturales x 300 grs.', 180, 4, 'img/productos/634dad3bea3e1.jpg'),
+(23, 'Aritos frutales x 300 grs.', 230, 4, 'img/productos/634dad52726df.jpg'),
+(24, 'Azúcar impalpable x 500 grs.', 172, 5, 'img/productos/634db2cce7d59.jpg'),
+(25, 'Azúcar negra x 500 grs.', 165, 5, 'img/productos/634db2deb6f03.jpg'),
+(26, 'Coco rallado x 500 grs.', 871, 5, 'img/productos/634db2ee2bdbe.jpg'),
+(27, 'Polvo para hornear x 100 grs.', 90, 5, 'img/productos/634db338d7a2b.jpg'),
+(28, 'Arroz integral x 500 grs.', 90, 6, 'img/productos/634db3018025a.jpg'),
+(29, 'Garbanzos x 500 grs.', 125, 6, 'img/productos/634db31377e7e.jpg'),
+(30, 'Porotos Alubia x 500 grs.', 110, 6, 'img/productos/634db3267317f.jpg'),
+(31, 'Porotos Negros x 500 grs.', 175, 6, 'img/productos/634db3530d2be.jpg'),
+(45, 'Mix frutos secos x 100grs', 210, 1, 'img/productos/634dad759ac38.jpg'),
+(56, 'Arándanos x 100 grs.', 190, 1, 'img/productos/634db2611eb39.jpg'),
+(57, 'Almendras x 100 grs', 175, 1, 'img/productos/634daa5a37e18.jpg'),
+(58, 'Ciruela bombón x 100 grs', 180, 1, 'img/productos/634d97afc98fc.jpg'),
+(59, 'Adobo para pizza x 100 grs', 71, 2, 'img/productos/634da1bfbc75d.jpg'),
+(60, 'Nueces peladas mariposa x 100 grs', 256, 1, 'img/productos/634da1e913e78.jpg'),
+(61, 'Harina de algarroba x 100 grs', 53, 3, 'img/productos/634da231ca60f.jpg'),
+(62, 'Harina de almendras x 100 grs', 224, 3, 'img/productos/634da2b047038.jpg'),
+(63, 'Ajo en polvo', 85, 2, 'img/productos/634da45917203.jpg'),
+(64, 'Condimento para arroz x 100 grs', 75, 2, 'img/productos/634da47a49a32.jpg'),
+(65, 'Orégano x 100 grs', 84, 2, 'img/productos/634da4a0dd0ea.jpg'),
+(66, 'Pimentón x 100 grs', 82, 2, 'img/productos/634da4c26c599.jpg'),
+(67, 'Provenzal x 100 grs', 95, 2, 'img/productos/634da4e1bd2b4.jpg'),
+(68, 'Canela molida x 100 grs ', 240, 2, 'img/productos/634da4fa4a054.jpg'),
+(69, 'Harina de Arroz x 100 grs', 183, 3, 'img/productos/634da5645aab2.jpg'),
+(70, 'Harina de coco x 500 grs', 580, 3, 'img/productos/634da5c27dbd2.jpg'),
+(71, 'Harina de soja x 500 grs', 149, 3, 'img/productos/634da5e48dae7.jpg');
 
 -- --------------------------------------------------------
 
@@ -157,7 +156,7 @@ ALTER TABLE `categorias`
 -- AUTO_INCREMENT de la tabla `lista_productos`
 --
 ALTER TABLE `lista_productos`
-  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
