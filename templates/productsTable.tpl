@@ -3,6 +3,7 @@
 <table class="table">
     <thead>
       <tr>
+          <th scope="col"></th>
           <th scope="col">Producto</th>
           <th scope="col">Precio</th>
           <th scope="col">Tipo de Producto</th>
@@ -14,6 +15,7 @@
     <tbody>
       {foreach from=$products item=$product}
       <tr>
+        <td><img class="rounded mx-auto d-block imagenProductos" src="{$product->imagen}"></td>
         <td><a href='viewProduct/{$product->id_producto}'type='button'>{$product->nombre_producto}</a></td>
         <td>{$product->precio} </td>
         <td>{$product->categoria}</td>

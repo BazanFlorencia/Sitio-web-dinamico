@@ -1,7 +1,8 @@
 {include file='templates/header.tpl'}
 
 <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
+
+    <img src="{$product->imagen}" class="card-img-top" >
         <div class="card-body">
             <h5 class="card-title">{$product->nombre_producto}</h5>
             <p class="card-text">{$product->categoria}</p>

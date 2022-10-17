@@ -33,12 +33,18 @@ require_once './app/helpers/auth.helper.php';
     public function addProduct(){
         $this->authHelper->checkloggedIn();
         if (!empty($_POST['nombre_producto'])&&!empty($_POST['precio'])&&!empty($_POST['tipo_producto'])){
-          $name = $_POST['nombre_producto'];
-          $price = $_POST['precio'];
-          $type_product = $_POST['tipo_producto'];
+            $name = $_POST['nombre_producto'];
+            $price = $_POST['precio'];
+            $type_product = $_POST['tipo_producto'];
+            $imagen = $_FILES['imagen']['tmp_name'];
 
-          $this->modelProduct->insertProduct($name, $price, $type_product);
-          $this->viewProduct->locationHome();
+            if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png" ) {
+                $this->modelProduct->insertProduct($name, $price, $type_product, $_FILES['imagen']['tmp_name']);
+            }
+            else{
+                $this->modelProduct->insertProduct($name, $price, $type_product);
+            }
+            $this->viewProduct->locationHome();
         }
     }
 
@@ -61,10 +67,18 @@ require_once './app/helpers/auth.helper.php';
             $name = $_POST['nombre_producto'];
             $price = $_POST['precio'];
             $type_product = $_POST['tipo_producto'];
+            var_dump($_FILES);
+            $imagen = $_FILES['imagen']['tmp_name'];
+
+            if($_FILES['imagen']['type'] == "image/jpg" || $_FILES['imagen']['type'] == "image/jpeg" || $_FILES['imagen']['type'] == "image/png" ) {
+                $this->modelProduct->updateProductById($name, $price, $type_product, $id, $_FILES['imagen']['tmp_name']);
+            }
+            else{ 
             $this->modelProduct->updateProductById($name, $price, $type_product,$id);
-        }
+            }
         $this->viewProduct->locationHome();
     }
+}
 
     public function showProduct($id){
         $product = $this-> modelProduct->getProduct($id);
