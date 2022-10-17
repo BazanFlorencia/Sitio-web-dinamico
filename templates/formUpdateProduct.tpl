@@ -17,7 +17,7 @@
                 {/foreach}
             </select>
         </div>
-        <div class="form_add">
+        <div class="formulario1">
             <input type="file" name="imagen">
         </div>
         <div class="formulario1">

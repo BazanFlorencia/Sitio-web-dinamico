@@ -19,7 +19,7 @@ class categoryModel{
         return $category;
     }
     public function getProductsByCategory($id){
-        $query = $this->db -> prepare('SELECT `id_producto`, `nombre_producto`, `precio`, `categorias`.`tipo_producto` as `categoria` FROM `lista_productos` INNER JOIN `categorias` ON `lista_productos`.`id_categoria`= `categorias`.`id_categoria` WHERE `categorias`.`id_categoria`=?');
+        $query = $this->db -> prepare('SELECT `id_producto`, `nombre_producto`, `precio`, `imagen`, `categorias`.`tipo_producto` as `categoria` FROM `lista_productos` INNER JOIN `categorias` ON `lista_productos`.`id_categoria`= `categorias`.`id_categoria` WHERE `categorias`.`id_categoria`=?');
         $query->execute([$id]);
         $productsByCategory = $query ->fetchAll(PDO::FETCH_OBJ);
         return $productsByCategory;
